@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test'
 
+test('Button is loading ', async ({ page }) => {
+  await page.goto('http://localhost:3000')
+  await expect(page.locator('img')).toBeVisible()
+})
 
-
-  test('my test', async ({ page }) => {
-    // Assertions use the expect API.
-    await expect page.goto('https://www.google.co.in/');
-
-    const title = await page.locator('Google');
-    await expect(page).toHaveURL('https://www.google.co.in/');
-  })
-
+test('Check Hello text', async ({ page }) => {
+  await page.goto('http://localhost:3000')
+  await expect(page.locator('text=Hello')).toBeVisible()
+})
